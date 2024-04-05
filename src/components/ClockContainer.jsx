@@ -73,8 +73,8 @@ const Tooltip = styled.div`
   left: ${(props) => props.tooltip.x + 20}px;
   top: ${(props) => props.tooltip.y + 20}px;
   display: ${(props) => props.tooltip.display};
-  background-color: #fff;
   padding: 5px;
+  background-color: #5d9f8a;
   border-radius: 5px;
   pointer-events: none;
 `;
