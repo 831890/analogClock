@@ -4,10 +4,9 @@ import MinuteHand from './MinuteHand';
 import SecondHand from './SecondHand';
 import useTimeStore from '../store/useTimeStore';
 import IndexNumber from './IndexNumber';
-import '../assets/css/clock.css';
 import styled from 'styled-components';
 
-const ClockComponent = () => {
+const ClockContainer = () => {
   const date = useTimeStore((state) => state.date);
   const updateDate = useTimeStore((state) => state.updateDate);
 
@@ -47,21 +46,7 @@ const ClockComponent = () => {
         <SecondHand seconds={seconds} />
         <IndexNumber />
       </Clock>
-      {/* 툴팁!!!!!!!!!!!!! */}
-      <div
-        style={{
-          position: 'fixed',
-          left: `${tooltip.x + 10}px`,
-          top: `${tooltip.y + 10}px`,
-          display: `${tooltip.display}`,
-          backgroundColor: 'lightgray',
-          padding: '5px',
-          borderRadius: '5px',
-          pointerEvents: 'none',
-        }}
-      >
-        {formatTime(date)}
-      </div>
+      <Tooltip tooltip={tooltip}>{formatTime(date)}</Tooltip>
     </ClockWrap>
   );
 };
@@ -80,5 +65,18 @@ const Clock = styled.div`
   background: #000;
   border-radius: 50%;
   overflow: hidden;
+  transform: rotate(${(props) => props.theme.degHour}deg);
 `;
-export default ClockComponent;
+
+const Tooltip = styled.div`
+  position: fixed;
+  left: ${(props) => props.tooltip.x + 20}px;
+  top: ${(props) => props.tooltip.y + 20}px;
+  display: ${(props) => props.tooltip.display};
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  pointer-events: none;
+`;
+
+export default ClockContainer;

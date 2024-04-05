@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const MinuteHand = ({ minutes, seconds }) => {
   const degMin = minutes * (360 / 60) + seconds * (360 / 60 / 60);
-  return <Hands className="m-hand" style={{ transform: `rotate(${degMin}deg)` }}></Hands>;
+  return <Hands style={{ transform: `rotate(${degMin}deg)` }}></Hands>;
 };
 
 const Hands = styled.div`
