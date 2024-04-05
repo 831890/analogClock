@@ -47,7 +47,7 @@ const ClockComponent = () => {
         <SecondHand seconds={seconds} />
         <IndexNumber />
       </Clock>
-      {/* 툴팁 */}
+      {/* 툴팁!!!!!!!!!!!!! */}
       <div
         style={{
           position: 'fixed',
