@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const HourHand = ({ hours, minutes }) => {
   const degHour = hours * (360 / 12) + minutes * (360 / 12 / 60);
-  return <Hands style={{ transform: `rotate(${degHour}deg)` }}></Hands>;
+  return <Hands degHour={degHour}></Hands>;
 };
 const Hands = styled.div`
   position: absolute;
@@ -12,6 +12,6 @@ const Hands = styled.div`
   width: 13px;
   height: 160px;
   background: #efbc9b;
-  rotate: var(--degHour);
+  transform: rotate(${(props) => props.degHour}deg);
 `;
 export default HourHand;

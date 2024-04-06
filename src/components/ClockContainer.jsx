@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import useTimeStore from '../store/useTimeStore';
 import HourHand from './HourHand';
 import MinuteHand from './MinuteHand';
 import SecondHand from './SecondHand';
-import useTimeStore from '../store/useTimeStore';
 import IndexNumber from './IndexNumber';
 import styled from 'styled-components';
 
@@ -39,7 +39,7 @@ const ClockContainer = () => {
     return date.toLocaleTimeString('ko-KR');
   };
   return (
-    <ClockWrap onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+    <Wrap onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
       <Clock className="clock">
         <HourHand hours={hours} minutes={minutes} />
         <MinuteHand minutes={minutes} seconds={seconds} />
@@ -47,11 +47,11 @@ const ClockContainer = () => {
         <IndexNumber />
       </Clock>
       <Tooltip tooltip={tooltip}>{formatTime(date)}</Tooltip>
-    </ClockWrap>
+    </Wrap>
   );
 };
 
-const ClockWrap = styled.div`
+const Wrap = styled.div`
   width: 500px;
   height: 500px;
   margin: 0 auto;

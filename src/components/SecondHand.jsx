@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const SecondHand = ({ seconds }) => {
   const degSec = seconds * (360 / 60);
-  return <Hands style={{ transform: `rotate(${degSec}deg)` }}></Hands>;
+  return <Hands degSec={degSec}></Hands>;
 };
 const Hands = styled.div`
   position: absolute;
@@ -12,7 +12,7 @@ const Hands = styled.div`
   width: 4px;
   height: 200px;
   background: #a5dd9b;
-  rotate: var(--degSec);
+  transform: rotate(${(props) => props.degSec}deg);
 
   &:after {
     position: absolute;
