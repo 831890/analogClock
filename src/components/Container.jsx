@@ -6,7 +6,7 @@ import SecondHand from './SecondHand';
 import IndexNumber from './IndexNumber';
 import styled from 'styled-components';
 
-const ClockContainer = () => {
+const Container = () => {
   const date = useTimeStore((state) => state.date);
   const updateDate = useTimeStore((state) => state.updateDate);
 
@@ -46,26 +46,23 @@ const ClockContainer = () => {
         <SecondHand seconds={seconds} />
         <IndexNumber />
       </Clock>
-      <Tooltip tooltip={tooltip}>{formatTime(date)}</Tooltip>
+      <Tooltip tooltip={tooltip}>김주아 : {formatTime(date)}</Tooltip>
     </Wrap>
   );
 };
 
 const Wrap = styled.div`
-  width: 500px;
-  height: 500px;
-  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
 `;
 
 const Clock = styled.div`
   position: relative;
-  margin: 0 auto;
-  width: 500px;
-  height: 500px;
-  background: #000;
-  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  background: #e5e5e5;
   overflow: hidden;
-  transform: rotate(${(props) => props.theme.degHour}deg);
 `;
 
 const Tooltip = styled.div`
@@ -74,9 +71,9 @@ const Tooltip = styled.div`
   top: ${(props) => props.tooltip.y + 20}px;
   display: ${(props) => props.tooltip.display};
   padding: 5px;
-  background-color: #5d9f8a;
+  background-color: #fff;
   border-radius: 5px;
   pointer-events: none;
 `;
 
-export default ClockContainer;
+export default Container;

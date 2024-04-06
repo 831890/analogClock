@@ -1,5 +1,5 @@
-import ClockContainer from './components/ClockContainer';
+import Container from './components/Container';
 
-const App = () => <ClockContainer />;
+const App = () => <Container />;
 
 export default App;

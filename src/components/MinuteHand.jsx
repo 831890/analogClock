@@ -8,11 +8,11 @@ const MinuteHand = ({ minutes, seconds }) => {
 const Hands = styled.div`
   position: absolute;
   transform-origin: bottom;
-  top: calc(50% - 220px);
+  top: calc(50% - 100px);
   left: calc(50% - 5px);
-  width: 8px;
-  height: 220px;
-  background: #9cafaa;
+  width: 5px;
+  height: 100px;
+  background: #fca311;
   transform: rotate(${(props) => props.degMin}deg);
 `;
 

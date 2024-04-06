@@ -7,11 +7,11 @@ const HourHand = ({ hours, minutes }) => {
 const Hands = styled.div`
   position: absolute;
   transform-origin: bottom;
-  top: calc(50% - 160px);
-  left: calc(50% - 8px);
-  width: 13px;
-  height: 160px;
-  background: #efbc9b;
+  top: calc(50% - 65px);
+  left: calc(50% - 5px);
+  width: 5px;
+  height: 65px;
+  background: #14213d;
   transform: rotate(${(props) => props.degHour}deg);
 `;
 export default HourHand;
